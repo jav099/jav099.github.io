@@ -1,0 +1,239 @@
+.navbar-custom {
+    background-color: #00274C;
+}
+
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+    color: #FFFFFF;
+}
+
+/* link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+
+/* color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    /*color: #F0F0F0; */
+    color: #F2D384;
+}
+
+
+/* custom styling for all icons */
+.fa-bars {
+  color: white;
+}
+
+.fa-graduation-cap, .fa-code-branch, .fa-code, .fa-tools, .fa-project-diagram,
+.fa-globe-americas {
+  color: #174992;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+body {
+  padding-top: 80px;
+}
+
+
+.card-header {
+  background-color: #F0F0F0;
+}
+
+.card {
+  margin-top: 3%;
+}
+
+.date {
+  color: #174992;
+  margin: 0;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+li {
+  list-style-image: url(../images/terminal-solid.svg);
+  font-size: 120%;
+}
+
+li span {
+  font-size: 70%;
+}
+
+nav li {
+  list-style: none;
+}
+
+@keyframes slideUp {
+  from {
+    margin-top: 700px;
+  }
+  to {
+    margin-top: 3%;
+  }
+}
+
+#top1, #top2, #top3 {
+  animation-name: slideUp;
+  animation-duration: 3s;
+}
+
+#bottom1, #bottom2, #bottom3 {
+  animation-name: slideUp;
+  animation-duration: 4s;
+}
+
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+/*
+<div class="container mr-auto">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-graduation-cap"></span> Education
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="date"> 2018 - 2022</p>
+          <h4> University of Michigan </h4>
+          <h6> B.S. Computer Science </h6>
+          <ul>
+            <li> <span>3.5 GPA</span></li>
+          </ul>
+          <h6>Relevant coursework: </h6>
+          <ul>
+            <li><span>EECS 281: Data Structures and Algorithms</span></li>
+            <li><span>EECS 484: Data Base Management Systems</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-code-branch"></span> Work Experience
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="date"> 2019</p>
+          <h4> Telefonica Movistar </h4>
+          <h5> Intern</h5>
+          <h6> Mexico City </h6>
+          <ul>
+            <li><span>Developed scripts to gather weather data using a Dark Sky API and Python</span></li>
+          </ul>
+          <p class="date"> 2019 - </p>
+          <h4>U-M ITS </h4>
+          <h5> On campus tech support </h5>
+          <h6> Ann Arbor </h6>
+          <ul>
+            <li><span>Assisted students anf faculty with troubleshooting and general tech consulting</span></li>
+            <li><span>Ranked #2 for customer satisfaction for the Fall 2019 Semester</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-project-diagram"></span> Projects
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="date"> 2019</p>
+          <h4> Command Line Chat Analyzer</h4>
+          <p> A CL tool written in C++ and Python to give statistics about a Whatsapp chat file</p>
+          <p class="date"> 2017</p>
+          <h4> School Aid / School Aid 2</h4>
+          <p> Developed and released two iOS apps with tools to help students with studying and organization</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-tools"></span> Skills
+          </h5>
+        </div>
+        <div class="card-body">
+          <h4> Front-End Web Development</h4>
+          <ul>
+            <li> <span>Bootstrap</span></li>
+            <li> <span>HTML</span></li>
+            <li><span>CSS</span></li>
+            <li><span>JavaScript</span></li>
+          </ul>
+          <h4> iOS Development</h4>
+          <ul>
+            <li> <span>UIKit</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-code"></span> Programming Languages
+          </h5>
+        </div>
+        <div class="card-body">
+          <h4> Proficient with:</h4>
+          <ul>
+            <li><span>C++</span></li>
+            <li><span>Python</span></li>
+            <li><span>HTML</span></li>
+            <li><span>CSS</span></li>
+          </ul>
+          <h4>Familiar with:</h4>
+          <ul>
+            <li><span>JavaScript</span></li>
+            <li><span>Swift</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            <span class="fas fa-globe-americas"></span> Spoken Languages
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><span>Spanish</span></li>
+            <li><span>English</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- End of row-->
+  </div>
+
+</div>
+*/
