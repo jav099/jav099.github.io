@@ -103,6 +103,10 @@ span {
 
 }
 
+.nav-link {
+  font-weight: lighter;
+}
+
 a {
   margin-left: 1%;
   margin-right: 1%;
