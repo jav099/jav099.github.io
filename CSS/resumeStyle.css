@@ -66,6 +66,29 @@ nav li {
   list-style: none;
 }
 
+.btn {
+  background-color: #00274C;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#firstRow {
+  text-align: center;
+}
+
+
+
+
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #174992;
+  color: #F2D384;
+}
+
 @keyframes slideUp {
   from {
     margin-top: 700px;
