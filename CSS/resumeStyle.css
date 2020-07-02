@@ -83,10 +83,6 @@ nav li {
   font-weight: lighter;
 }
 
-
-
-
-
 /* Darker background on mouse-over */
 .btn:hover {
   background-color: #174992;
@@ -102,12 +98,12 @@ nav li {
   }
 }
 
-#top1, #top2, #top3 {
+#educationCard, #workCard, #projectsCard {
   animation-name: slideUp;
   animation-duration: 3s;
 }
 
-#bottom1, #bottom2, #bottom3 {
+#skillsCard, #spokenCard, #languagesCard {
   animation-name: slideUp;
   animation-duration: 4s;
 }
