@@ -40,15 +40,17 @@
         </div>
       </div>
     </div>
+
   <div class="container mr-auto">
+    <!-- Download Button-->
     <div class="row" id="firstRow">
       <div class="col-sm-12">
         <a href="images/resumeFile.pdf" target="_blank" download="resumeFile" class="download">
           <button type="button" name="button" class="btn"><span class="fa fa-download"></span> Download PDF </button>
         </a>
       </div>
-
     </div>
+    <!-- Cards-->
       <div class="card-columns">
         <div class="card" id="educationCard">
           <div class="card-header">
@@ -66,8 +68,38 @@
             <h6>Relevant coursework: </h6>
             <ul>
               <li><span>EECS 281: Data Structures and Algorithms</span></li>
-              <li><span>EECS 484: Data Base Management Systems</span></li>
+              <li><span>EECS 485: Web Systems</span></li>
             </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn" data-toggle="modal" data-target="#educationModal">
+              More Info
+            </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="educationModal" tabindex="-1" role="dialog" aria-labelledby="educationModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" id="educationModalHeader">
+                  <h5 class="modal-title" id="educationModaltitle">Education</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="whiteClose">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Some projects of note completed (so far) during my time in Ann Arbor were:
+                    <ul>
+                      <li><span>Simulation of a day in the stock exchange using priority queues</span></li>
+                      <li><span>Created a reddit bot that responded using AI models trained with web-scraped data</span></li>
+                      <li><span>Implemented Prim's algorithm to create a minimum spanning tree of a graph and then used it alongside an arbitrary insertion travelling salesperson to achive an optimal TSP solution for a small sized graph.</span></li>
+                      <li><span>Used hash tables and binary search trees to create a basic implementation of a database</span></li>
+                    </ul>
+                    And as always... Go Blue!
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card" id="skillsCard">
@@ -88,6 +120,39 @@
             <ul>
               <li> <span>UIKit</span></li>
             </ul>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn" data-toggle="modal" data-target="#skillsModal">
+              More Info
+            </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="skillsModal" tabindex="-1" role="dialog" aria-labelledby="skillsModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" id="skillsModalHeader">
+                  <h5 class="modal-title" id="skillsModaltitle">Skills</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="blackClose">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Front-end web development:
+                    <ul>
+                      <li><span>Took an online course over summer 2020 to learn HTML, JS and CSS</span></li>
+                      <li><span>Built this website using the skills learned in the course + Bootstrap 4</span></li>
+                      <li><span>Delved a bit into ASP.NET Core technologies such as Razor Pages and Blazor as well as using C# for back end.</span></li>
+                    </ul>
+                    iOS Development:
+                    <ul>
+                      <li><span>Self taught Swift and UIKit to develop two apps back in 2017</span></li>
+                      <li><span>Really interested in using SwiftUI</span></li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card" id="workCard">
@@ -140,6 +205,37 @@
             <p class="date"> 2017</p>
             <h4> School Aid / School Aid 2</h4>
             <p> Developed and released two iOS apps with tools to help students with studying and organization</p>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn" data-toggle="modal" data-target="#projectsModal">
+              More Info
+            </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="projectsModal" tabindex="-1" role="dialog" aria-labelledby="projectsModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" id="projectsModalHeader">
+                  <h5 class="modal-title" id="projectsModaltitle">Projects</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="whiteClose">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Command Line Chat Analyzer
+                    <ul>
+                      <li><span>Processed the text files using C++ and used data structures such as binary search trees and hash tables to output the data in CSV format. The CSV file was then processed by Python using Matplotlib to create charts</span></li>
+                      <li><span>Planning to turn this into a full fledged web app in the future</span></li>
+                    </ul>
+                    School Aid / School Aid 2
+                    <ul>
+                      <li><span>Used UIKit and Storyboards to develop the apps. These were my first real experience with programming so beware of terrible variable names (var x = ...) and sphagetti organization!</span></li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card" id="languagesCard">
