@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical notebook visual mockup for Javier Contreras's personal site.">
+  <title>Javier Contreras — Technical Notebook Mockup</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f1;
+      --surface: #fffefa;
+      --ink: #172439;
+      --muted: #596474;
+      --faint: #7a8491;
+      --rule: #c9ced3;
+      --rule-strong: #939da8;
+      --accent: #315675;
+      --accent-dark: #213f58;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --page-width: 64rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 20rem;
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration-thickness: 0.13em;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 10;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.65rem 0.9rem;
+      color: var(--surface);
+      background: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .page {
+      width: min(100%, var(--page-width));
+      margin-inline: auto;
+      padding: 1.25rem 1.25rem 2.5rem;
+    }
+
+    .document-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.35rem 1.25rem;
+      margin: 0;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--ink);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .profile {
+      display: grid;
+      gap: 2rem;
+      padding-block: 2.5rem 2rem;
+    }
+
+    .eyebrow,
+    .section-number,
+    .entry-code,
+    .fact-list dt,
+    .link-note,
+    .portrait-caption {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      line-height: 1.45;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 0.9rem;
+      color: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin-bottom: 1.15rem;
+      font-size: clamp(2.65rem, 12vw, 4.9rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .intro {
+      max-width: 42rem;
+      margin-bottom: 0;
+      color: #344154;
+      font-size: clamp(1.12rem, 4.4vw, 1.4rem);
+      line-height: 1.55;
+    }
+
+    .placeholder-copy {
+      color: var(--muted);
+    }
+
+    .portrait {
+      width: min(100%, 12rem);
+      margin: 0;
+    }
+
+    .portrait-placeholder {
+      display: grid;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      place-items: center;
+      border: 1px solid var(--rule-strong);
+      color: var(--muted);
+      background: #e5e7e6;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      line-height: 1.65;
+      letter-spacing: 0.09em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .portrait-caption {
+      margin-top: 0.55rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    .contents {
+      border-block: 1px solid var(--rule-strong);
+    }
+
+    .contents ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contents li {
+      min-width: 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .contents li:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .contents li:nth-child(odd) {
+      border-right: 1px solid var(--rule);
+    }
+
+    .contents a {
+      display: flex;
+      min-height: 3rem;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.65rem;
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.035em;
+      text-decoration: none;
+    }
+
+    .contents a:hover {
+      background: var(--surface);
+    }
+
+    .contents .nav-index {
+      flex: 0 0 auto;
+      color: var(--faint);
+    }
+
+    main {
+      display: block;
+    }
+
+    .notebook-section {
+      scroll-margin-top: 1rem;
+      padding-block: 2.7rem;
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .section-heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--faint);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.6rem, 7vw, 2.1rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .section-body > :last-child {
+      margin-bottom: 0;
+    }
+
+    .section-lede {
+      max-width: 43rem;
+      margin-bottom: 1.75rem;
+      font-size: 1.075rem;
+    }
+
+    .fact-list {
+      margin: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .fact-list > div {
+      padding-block: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .fact-list dt {
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+    }
+
+    .fact-list dd {
+      margin: 0;
+    }
+
+    .entries {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    .entry {
+      padding-block: 1.3rem 1.45rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .entry-header {
+      display: grid;
+      gap: 0.2rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .entry-code {
+      color: var(--accent);
+    }
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 1.22rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .entry p {
+      max-width: 42rem;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+
+    .entry-link {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.95rem;
+    }
+
+    .external-mark {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      text-decoration: none;
+    }
+
+    .professional-links {
+      margin: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .professional-links > div {
+      display: grid;
+      padding-block: 0.9rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .professional-links dt,
+    .professional-links dd {
+      margin: 0;
+    }
+
+    .professional-links dt {
+      align-self: center;
+      font-weight: 600;
+    }
+
+    .professional-links dd {
+      min-width: 0;
+    }
+
+    .professional-links a {
+      display: flex;
+      min-height: 2.75rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      overflow-wrap: anywhere;
+    }
+
+    .professional-links .external-mark {
+      flex: 0 0 auto;
+    }
+
+    .link-note {
+      display: block;
+      margin-top: 0.65rem;
+      color: var(--faint);
+      letter-spacing: 0.035em;
+      text-transform: none;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.4rem 1rem;
+      padding-top: 1rem;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 36rem) {
+      .page {
+        padding-inline: 2rem;
+      }
+
+      .profile {
+        grid-template-columns: minmax(0, 1fr) 11rem;
+        align-items: end;
+        gap: 3rem;
+        padding-block: 3.4rem 2.8rem;
+      }
+
+      .portrait {
+        width: 100%;
+        justify-self: end;
+      }
+
+      .fact-list > div {
+        display: grid;
+        grid-template-columns: 10rem minmax(0, 1fr);
+        gap: 1.25rem;
+      }
+
+      .fact-list dt {
+        margin-bottom: 0;
+      }
+
+      .entry-header {
+        grid-template-columns: 5.25rem minmax(0, 1fr);
+        gap: 1rem;
+      }
+
+      .professional-links > div {
+        grid-template-columns: 9rem minmax(0, 1fr);
+        align-items: center;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (min-width: 42rem) {
+      .contents ul {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .contents li,
+      .contents li:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .contents li:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .contents li:not(:last-child) {
+        border-right: 1px solid var(--rule);
+      }
+
+      .contents a {
+        padding-inline: 0.85rem;
+      }
+    }
+
+    @media (min-width: 48rem) {
+      .page {
+        padding-top: 1.75rem;
+        padding-bottom: 3rem;
+      }
+
+      .notebook-section {
+        display: grid;
+        grid-template-columns: 9.5rem minmax(0, 1fr);
+        gap: 2.5rem;
+        padding-block: 3.4rem;
+      }
+
+      .section-heading {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .skip-link,
+      .contents {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="page">
+    <header>
+      <p class="document-line">
+        <span>Personal profile / design option 02</span>
+        <span>Technical notebook / visual mockup</span>
+      </p>
+
+      <div class="profile">
+        <div>
+          <span class="eyebrow">00 / Profile</span>
+          <h1>Javier Contreras</h1>
+          <p class="intro placeholder-copy">
+            [Short professional introduction placeholder. A concise summary of
+            Javier’s work, interests, and areas of expertise will appear here.]
+          </p>
+        </div>
+
+        <figure class="portrait">
+          <div
+            class="portrait-placeholder"
+            role="img"
+            aria-label="Placeholder for Javier Contreras's profile portrait"
+          >
+            <span aria-hidden="true">Portrait<br>placeholder</span>
+          </div>
+          <figcaption class="portrait-caption">Profile image to be supplied</figcaption>
+        </figure>
+      </div>
+
+      <nav class="contents" aria-label="On this page">
+        <ul>
+          <li><a href="#about"><span class="nav-index">01</span> About</a></li>
+          <li><a href="#specifications"><span class="nav-index">02</span> Specifications</a></li>
+          <li><a href="#projects"><span class="nav-index">03</span> Projects</a></li>
+          <li><a href="#elsewhere"><span class="nav-index">04</span> Elsewhere</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="notebook-section" id="about" aria-labelledby="about-heading">
+        <header class="section-heading">
+          <span class="section-number">Section 01</span>
+          <h2 id="about-heading">About</h2>
+        </header>
+
+        <div class="section-body">
+          <p class="section-lede placeholder-copy">
+            [A slightly longer professional biography belongs here. This space
+            can explain Javier’s background and current focus without becoming
+            a full résumé.]
+          </p>
+
+          <dl class="fact-list">
+            <div>
+              <dt>Professional focus</dt>
+              <dd class="placeholder-copy">[Area or discipline]</dd>
+            </div>
+            <div>
+              <dt>Current work</dt>
+              <dd class="placeholder-copy">[Short description, if provided]</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd class="placeholder-copy">[Optional location]</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="notebook-section" id="specifications" aria-labelledby="specifications-heading">
+        <header class="section-heading">
+          <span class="section-number">Section 02</span>
+          <h2 id="specifications-heading">Specifications</h2>
+        </header>
+
+        <div class="section-body">
+          <p class="section-lede placeholder-copy">
+            [Selected specifications Javier has worked on. Titles,
+            organizations, contribution details, and URLs will be added once
+            supplied.]
+          </p>
+
+          <ol class="entries">
+            <li class="entry">
+              <article>
+                <header class="entry-header">
+                  <span class="entry-code">SP-01</span>
+                  <h3>[Specification title placeholder]</h3>
+                </header>
+                <p>[Standards body or working group] · [Contribution description]</p>
+                <a
+                  class="entry-link"
+                  href="https://example.com/specification-placeholder-01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Specification URL placeholder
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </article>
+            </li>
+            <li class="entry">
+              <article>
+                <header class="entry-header">
+                  <span class="entry-code">SP-02</span>
+                  <h3>[Specification title placeholder]</h3>
+                </header>
+                <p>[Standards body or working group] · [Contribution description]</p>
+                <a
+                  class="entry-link"
+                  href="https://example.com/specification-placeholder-02"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Specification URL placeholder
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="notebook-section" id="projects" aria-labelledby="projects-heading">
+        <header class="section-heading">
+          <span class="section-number">Section 03</span>
+          <h2 id="projects-heading">Projects</h2>
+        </header>
+
+        <div class="section-body">
+          <p class="section-lede placeholder-copy">
+            [A focused selection of professional or open-source projects.
+            Project names, roles, and links remain placeholders.]
+          </p>
+
+          <ol class="entries">
+            <li class="entry">
+              <article>
+                <header class="entry-header">
+                  <span class="entry-code">PR-01</span>
+                  <h3>[Project name placeholder]</h3>
+                </header>
+                <p>[One or two sentences describing the project, Javier’s role, and the relevant outcome.]</p>
+                <a
+                  class="entry-link"
+                  href="https://example.com/project-placeholder-01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Project URL placeholder
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </article>
+            </li>
+            <li class="entry">
+              <article>
+                <header class="entry-header">
+                  <span class="entry-code">PR-02</span>
+                  <h3>[Project name placeholder]</h3>
+                </header>
+                <p>[One or two sentences describing the project, Javier’s role, and the relevant outcome.]</p>
+                <a
+                  class="entry-link"
+                  href="https://example.com/project-placeholder-02"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Project URL placeholder
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="notebook-section" id="elsewhere" aria-labelledby="elsewhere-heading">
+        <header class="section-heading">
+          <span class="section-number">Section 04</span>
+          <h2 id="elsewhere-heading">Elsewhere</h2>
+        </header>
+
+        <div class="section-body">
+          <p class="section-lede placeholder-copy">
+            [Verified professional profiles and additional links will appear here.]
+          </p>
+
+          <dl class="professional-links">
+            <div>
+              <dt>LinkedIn</dt>
+              <dd>
+                <a
+                  href="https://example.com/linkedin-placeholder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/[profile-placeholder]
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>GitHub</dt>
+              <dd>
+                <a
+                  href="https://example.com/github-placeholder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/[username-placeholder]
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>Gerrit</dt>
+              <dd>
+                <a
+                  href="https://example.com/gerrit-placeholder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  [Gerrit profile URL placeholder]
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>Other</dt>
+              <dd>
+                <a
+                  href="https://example.com/professional-link-placeholder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  [Additional professional link placeholder]
+                  <span class="external-mark" aria-hidden="true">↗</span>
+                  <span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <small class="link-note">All destinations are non-production placeholders.</small>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Javier Contreras / Personal site mockup</p>
+      <p>Revision: placeholder</p>
+    </footer>
+  </div>
+</body>
+</html>

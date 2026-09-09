@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Editorial profile layout mockup for Javier Contreras.">
+  <title>Javier Contreras — Editorial Profile Mockup</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3eee5;
+      --paper-deep: #e7ddcf;
+      --ink: #252522;
+      --ink-soft: #625f58;
+      --rule: #c9bca9;
+      --accent: #985d46;
+      --accent-dark: #744331;
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --page-width: 76rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      border-top: 0.3rem solid var(--accent);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.25em;
+      transition: color 160ms ease, text-decoration-color 160ms ease;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration-color: currentColor;
+    }
+
+    a:focus-visible {
+      border-radius: 0.1rem;
+      outline: 0.18rem solid var(--accent);
+      outline-offset: 0.25rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 10;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.65rem 0.9rem;
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-160%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--page-width));
+      margin-inline: auto;
+    }
+
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .masthead__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 4.75rem;
+      gap: 1rem;
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .primary-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .primary-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding-inline: 0.6rem;
+      color: var(--ink-soft);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .primary-nav a:hover {
+      color: var(--accent-dark);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2.25rem;
+      padding-block: clamp(2.5rem, 8vw, 6.75rem);
+    }
+
+    .portrait {
+      margin: 0;
+    }
+
+    .portrait svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--rule);
+      background: var(--paper-deep);
+    }
+
+    .portrait figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      color: var(--ink-soft);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .portrait figcaption span:last-child {
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
+    .hero__copy {
+      align-self: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1.15rem;
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 2.2rem;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 9ch;
+      margin-bottom: 1.4rem;
+      font-size: clamp(3.25rem, 15vw, 6.4rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 0.89;
+    }
+
+    .introduction {
+      max-width: 35rem;
+      margin-bottom: 2rem;
+      font-family: var(--serif);
+      font-size: clamp(1.22rem, 4.7vw, 1.55rem);
+      line-height: 1.45;
+    }
+
+    .placeholder-note {
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: 0.72em;
+      font-style: italic;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .current-focus {
+      max-width: 34rem;
+      margin: 0;
+      padding: 0.35rem 0 0.35rem 1.15rem;
+      border-left: 0.18rem solid var(--accent);
+    }
+
+    .current-focus dt {
+      margin-bottom: 0.25rem;
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .current-focus dd {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .section {
+      padding-block: clamp(3.5rem, 8vw, 6.5rem);
+      border-top: 1px solid var(--rule);
+    }
+
+    .section-heading {
+      margin-bottom: clamp(2.25rem, 6vw, 4.25rem);
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 0.85rem;
+      color: var(--accent-dark);
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0.6rem;
+      font-size: clamp(2.5rem, 11vw, 4.8rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 33rem;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+    }
+
+    .work-list {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 2.35rem minmax(0, 1fr);
+      gap: 1rem;
+      padding-block: 1.6rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .work-index {
+      padding-top: 0.15rem;
+      color: var(--accent-dark);
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .work-type {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--ink-soft);
+      font-size: 0.7rem;
+      font-weight: 750;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .work-details h3 {
+      margin-bottom: 0.55rem;
+      font-size: clamp(1.35rem, 5vw, 1.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .work-details p {
+      max-width: 37rem;
+      margin-bottom: 1rem;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+    }
+
+    .work-link,
+    .profile-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .external-mark {
+      margin-left: 0.35rem;
+      color: var(--accent-dark);
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+
+    .links-layout {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .links-intro h2 {
+      margin-bottom: 1rem;
+      font-size: clamp(2.5rem, 11vw, 4.8rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .links-intro p {
+      max-width: 29rem;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+    }
+
+    .profile-links {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid var(--rule);
+      list-style: none;
+    }
+
+    .profile-links li {
+      border-top: 1px solid var(--rule);
+    }
+
+    .profile-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      min-height: 4.25rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .profile-link small {
+      align-self: center;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .site-footer {
+      padding-block: 1.6rem 2rem;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .site-footer__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (min-width: 48rem) {
+      .shell {
+        width: min(calc(100% - 4rem), var(--page-width));
+      }
+
+      .masthead__inner {
+        min-height: 5.5rem;
+      }
+
+      .primary-nav ul {
+        gap: 1.25rem;
+      }
+
+      .hero {
+        grid-template-columns: minmax(17rem, 0.9fr) minmax(23rem, 1.1fr);
+        align-items: center;
+        gap: clamp(3rem, 7vw, 7.5rem);
+      }
+
+      h1 {
+        font-size: clamp(4.6rem, 8.2vw, 6.4rem);
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: minmax(15rem, 0.8fr) minmax(20rem, 1.2fr);
+        align-items: end;
+        gap: 3rem;
+      }
+
+      .section-heading p {
+        margin-bottom: 0.35rem;
+      }
+
+      .work-item {
+        grid-template-columns: 3rem minmax(0, 1fr) minmax(8rem, 0.4fr);
+        align-items: start;
+        gap: 1.5rem;
+        padding-block: 2rem;
+      }
+
+      .work-link {
+        justify-self: end;
+        margin-top: 0.6rem;
+      }
+
+      .work-details p {
+        margin-bottom: 0;
+      }
+
+      .links-layout {
+        grid-template-columns: minmax(17rem, 0.85fr) minmax(22rem, 1.15fr);
+        gap: clamp(3rem, 8vw, 8rem);
+      }
+    }
+
+    @media (min-width: 68rem) {
+      .hero {
+        grid-template-columns: minmax(22rem, 0.92fr) minmax(28rem, 1.08fr);
+      }
+
+      .portrait {
+        padding-left: 2rem;
+      }
+
+      .hero__copy {
+        padding-right: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <a class="site-name" href="#main-content" aria-label="Javier Contreras, home">Javier Contreras</a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#selected-work">Work</a></li>
+          <li><a href="#professional-links">Links</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero shell" id="profile" aria-labelledby="profile-title">
+      <figure class="portrait">
+        <svg viewBox="0 0 720 900" role="img" aria-labelledby="portrait-title portrait-description">
+          <title id="portrait-title">Portrait placeholder for Javier Contreras</title>
+          <desc id="portrait-description">A warm-toned abstract silhouette indicating where Javier's profile photograph will appear.</desc>
+          <rect width="720" height="900" fill="#ddd1c1"/>
+          <rect x="38" y="38" width="644" height="824" fill="none" stroke="#aa8f76" stroke-width="2"/>
+          <circle cx="360" cy="336" r="126" fill="#b59d86"/>
+          <path d="M154 760c20-168 92-260 206-260s186 92 206 260H154Z" fill="#b59d86"/>
+          <line x1="80" y1="112" x2="218" y2="112" stroke="#985d46" stroke-width="4"/>
+          <text x="80" y="155" fill="#744331" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" font-weight="700" letter-spacing="5">PORTRAIT</text>
+          <text x="80" y="182" fill="#625f58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" letter-spacing="3">PLACEHOLDER</text>
+        </svg>
+        <figcaption>
+          <span>Profile photograph</span>
+          <span>Image pending</span>
+        </figcaption>
+      </figure>
+
+      <div class="hero__copy">
+        <p class="eyebrow">Professional profile</p>
+        <h1 id="profile-title">Javier Contreras</h1>
+        <p class="introduction">
+          A short professional introduction will appear here, offering a clear view of Javier’s work and perspective.
+          <span class="placeholder-note">Introduction placeholder</span>
+        </p>
+        <dl class="current-focus">
+          <dt>Current focus</dt>
+          <dd>Current focus statement placeholder — concise details to be supplied.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section shell" id="selected-work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-number">01 / Selected work</span>
+          <h2 id="work-title">Specifications &amp; projects</h2>
+        </div>
+        <p>
+          A considered selection of technical specifications and projects will be introduced here.
+          All entries below are explicit placeholders.
+        </p>
+      </div>
+
+      <ol class="work-list">
+        <li class="work-item">
+          <span class="work-index" aria-hidden="true">01</span>
+          <div class="work-details">
+            <span class="work-type">Specification placeholder</span>
+            <h3>Specification title placeholder</h3>
+            <p>A brief, factual description of this specification and Javier’s contribution will appear here once provided.</p>
+          </div>
+          <a class="work-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+            View specification <span class="external-mark" aria-hidden="true">↗</span>
+            <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+          </a>
+        </li>
+        <li class="work-item">
+          <span class="work-index" aria-hidden="true">02</span>
+          <div class="work-details">
+            <span class="work-type">Specification placeholder</span>
+            <h3>Second specification title placeholder</h3>
+            <p>Reserved for another specification link and a concise description based on supplied information.</p>
+          </div>
+          <a class="work-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+            View specification <span class="external-mark" aria-hidden="true">↗</span>
+            <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+          </a>
+        </li>
+        <li class="work-item">
+          <span class="work-index" aria-hidden="true">03</span>
+          <div class="work-details">
+            <span class="work-type">Project placeholder</span>
+            <h3>Project title placeholder</h3>
+            <p>A short overview of the project, its purpose, and Javier’s role will appear here when details are available.</p>
+          </div>
+          <a class="work-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+            View project <span class="external-mark" aria-hidden="true">↗</span>
+            <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+          </a>
+        </li>
+        <li class="work-item">
+          <span class="work-index" aria-hidden="true">04</span>
+          <div class="work-details">
+            <span class="work-type">Project placeholder</span>
+            <h3>Second project title placeholder</h3>
+            <p>Reserved for an additional professional project and verified supporting information.</p>
+          </div>
+          <a class="work-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+            View project <span class="external-mark" aria-hidden="true">↗</span>
+            <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section shell" id="professional-links" aria-labelledby="links-title">
+      <div class="links-layout">
+        <div class="links-intro">
+          <span class="section-number">02 / Elsewhere</span>
+          <h2 id="links-title">Professional links</h2>
+          <p>Direct links to profiles, code, reviews, and other professional work. Final URLs are pending.</p>
+        </div>
+
+        <ul class="profile-links" aria-label="Professional profiles">
+          <li>
+            <a class="profile-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn <span class="external-mark" aria-hidden="true">↗</span></span>
+              <small>URL placeholder</small>
+              <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="profile-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+              <span>GitHub <span class="external-mark" aria-hidden="true">↗</span></span>
+              <small>URL placeholder</small>
+              <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="profile-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+              <span>Gerrit <span class="external-mark" aria-hidden="true">↗</span></span>
+              <small>URL placeholder</small>
+              <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="profile-link" href="https://example.com/" target="_blank" rel="noopener noreferrer">
+              <span>Other professional link <span class="external-mark" aria-hidden="true">↗</span></span>
+              <small>Link placeholder</small>
+              <span class="sr-only">(placeholder URL, opens in a new tab)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner shell">
+      <p>Javier Contreras</p>
+      <p>Editorial profile mockup · Placeholder content</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A modernist poster-style visual mockup for Javier Contreras's personal website.">
+  <title>Javier Contreras — Modernist Poster Mockup</title>
+  <style>
+    :root {
+      --paper: #f5f3ec;
+      --ink: #101010;
+      --accent: #c5222a;
+      --accent-dark: #941820;
+      --rule: 2px;
+      --gutter: clamp(1rem, 4vw, 4rem);
+      --display: "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed",
+        "Franklin Gothic Condensed", Impact, sans-serif;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--paper);
+      outline-offset: 4px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0;
+      left: var(--gutter);
+      z-index: 20;
+      padding: 0.8rem 1rem;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 800;
+      transform: translateY(-120%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .poster {
+      width: min(100%, 100rem);
+      margin-inline: auto;
+      overflow: hidden;
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: 4.75rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: var(--rule) solid var(--ink);
+      text-transform: uppercase;
+    }
+
+    .masthead__mark,
+    .masthead__edition {
+      margin: 0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .masthead__edition {
+      text-align: right;
+    }
+
+    .section-nav {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--ink);
+    }
+
+    .section-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      margin: 0;
+      padding: 0.65rem 0 0;
+      list-style: none;
+    }
+
+    .section-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.25em;
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(2.5rem, 7vw, 7rem) var(--gutter) 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: clamp(1.25rem, 4vw, 4rem);
+      right: 0;
+      z-index: -1;
+      width: clamp(1.25rem, 7vw, 7rem);
+      height: 44%;
+      background: var(--accent);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+      font-size: clamp(0.7rem, 2vw, 0.82rem);
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.25rem;
+      height: 0.75rem;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(4.4rem, 19vw, 17rem);
+      font-stretch: condensed;
+      font-weight: 900;
+      letter-spacing: -0.065em;
+      line-height: 0.73;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero h1 span:last-child {
+      color: var(--accent);
+      font-size: 0.72em;
+      letter-spacing: -0.055em;
+      text-align: right;
+    }
+
+    .hero__composition {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: clamp(2.75rem, 8vw, 7rem);
+    }
+
+    .hero__intro {
+      display: grid;
+      align-content: start;
+      border-top: var(--rule) solid var(--ink);
+      padding-top: 1rem;
+    }
+
+    .hero__intro p {
+      max-width: 31rem;
+      margin: 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .hero__intro .placeholder-note {
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .portrait {
+      margin: 0;
+    }
+
+    .portrait__frame {
+      position: relative;
+      display: grid;
+      min-height: 23rem;
+      aspect-ratio: 4 / 5;
+      place-items: center;
+      overflow: hidden;
+      border: var(--rule) solid var(--ink);
+      background:
+        linear-gradient(135deg, transparent 49.6%, var(--ink) 49.8%, var(--ink) 50.2%, transparent 50.4%),
+        var(--accent);
+      color: #fff;
+    }
+
+    .portrait__frame::before {
+      content: "";
+      position: absolute;
+      width: 36%;
+      aspect-ratio: 1;
+      border: var(--rule) solid #fff;
+      border-radius: 50%;
+      transform: translateY(-45%);
+    }
+
+    .portrait__frame::after {
+      content: "";
+      position: absolute;
+      bottom: -14%;
+      width: 72%;
+      aspect-ratio: 1;
+      border: var(--rule) solid #fff;
+      border-radius: 50%;
+    }
+
+    .portrait__label {
+      position: relative;
+      z-index: 2;
+      align-self: end;
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--ink);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .portrait figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.55rem;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .orientation {
+      display: none;
+    }
+
+    .content-section {
+      position: relative;
+      display: grid;
+      gap: 2rem;
+      padding: clamp(4rem, 10vw, 9rem) var(--gutter);
+      border-top: var(--rule) solid var(--ink);
+    }
+
+    .content-section__index {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(5.5rem, 22vw, 14rem);
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      line-height: 0.72;
+    }
+
+    .content-section__body {
+      max-width: 49rem;
+    }
+
+    .content-section h2 {
+      margin: 0 0 1.5rem;
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.86;
+      text-transform: uppercase;
+    }
+
+    .content-section__lead {
+      margin: 0;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .content-section__label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding-bottom: 0.25rem;
+      border-bottom: var(--rule) solid currentColor;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .bio {
+      margin-top: clamp(4rem, 10vw, 10rem);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .bio .content-section__index {
+      color: var(--ink);
+    }
+
+    .work {
+      background: var(--paper);
+    }
+
+    .work-grid {
+      display: grid;
+      gap: 0;
+      margin-top: 2.5rem;
+      border-top: var(--rule) solid var(--ink);
+    }
+
+    .work-item {
+      display: grid;
+      gap: 0.65rem;
+      padding: 1.5rem 0;
+      border-bottom: var(--rule) solid var(--ink);
+    }
+
+    .work-item__number {
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .work-item h3 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3vw, 1.65rem);
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .work-item p {
+      margin: 0;
+      color: #363636;
+    }
+
+    .placeholder-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      min-height: 44px;
+      font-weight: 800;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.25em;
+    }
+
+    .placeholder-link::after {
+      content: "↗";
+      font-size: 1.2em;
+      line-height: 1;
+    }
+
+    .links {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .links .content-section__index {
+      color: var(--accent);
+    }
+
+    .link-directory {
+      margin: 2.5rem 0 0;
+      padding: 0;
+      border-top: 1px solid #fff;
+      list-style: none;
+    }
+
+    .link-directory li {
+      border-bottom: 1px solid #fff;
+    }
+
+    .link-directory a {
+      display: grid;
+      grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 5.25rem;
+      padding: 0.75rem 0;
+      text-decoration: none;
+    }
+
+    .link-directory a:hover .link-directory__name,
+    .link-directory a:focus-visible .link-directory__name {
+      color: var(--accent);
+    }
+
+    .link-directory__number {
+      align-self: start;
+      padding-top: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .link-directory__name {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 7vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .link-directory__value {
+      display: block;
+      margin-top: 0.4rem;
+      color: #c9c9c9;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      overflow-wrap: anywhere;
+      text-transform: uppercase;
+    }
+
+    .link-directory__arrow {
+      color: var(--accent);
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      line-height: 1;
+    }
+
+    .link-note {
+      max-width: 33rem;
+      margin: 1.5rem 0 0;
+      color: #c9c9c9;
+      font-size: 0.75rem;
+    }
+
+    .footer {
+      display: grid;
+      gap: 1rem;
+      padding: 1.5rem var(--gutter);
+      border-top: var(--rule) solid var(--accent);
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a {
+      min-height: 44px;
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      text-underline-offset: 0.25em;
+    }
+
+    @media (min-width: 42rem) {
+      .masthead {
+        grid-template-columns: 1fr auto;
+      }
+
+      .section-nav {
+        grid-column: auto;
+        grid-row: 1;
+        border: 0;
+      }
+
+      .section-nav ul {
+        justify-content: center;
+        padding: 0;
+      }
+
+      .masthead__edition {
+        grid-column: 2;
+      }
+
+      .masthead__mark {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .section-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .hero__composition {
+        grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.68fr);
+        align-items: start;
+      }
+
+      .hero__intro {
+        min-height: 16rem;
+      }
+
+      .portrait {
+        transform: translateY(-2rem);
+      }
+
+      .content-section {
+        grid-template-columns: minmax(9rem, 0.42fr) minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .content-section__body {
+        padding-top: 0.35rem;
+      }
+
+      .work-item {
+        grid-template-columns: 3rem minmax(10rem, 0.7fr) minmax(0, 1.3fr);
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .work-item .placeholder-link {
+        grid-column: 3;
+      }
+
+      .footer {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 64rem) {
+      body {
+        border-inline: 1px solid var(--ink);
+      }
+
+      .masthead {
+        grid-template-columns: 1fr auto 1fr;
+      }
+
+      .masthead__edition {
+        grid-column: 3;
+      }
+
+      .section-nav {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .section-nav ul {
+        flex-wrap: nowrap;
+        gap: 1.75rem;
+      }
+
+      .hero {
+        min-height: 61rem;
+      }
+
+      .hero h1 {
+        white-space: nowrap;
+      }
+
+      .hero__composition {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        margin-top: 4.5rem;
+      }
+
+      .hero__intro {
+        grid-column: 1 / 6;
+      }
+
+      .portrait {
+        grid-column: 8 / 12;
+        margin-top: -7.5rem;
+      }
+
+      .orientation {
+        display: block;
+        grid-column: 6 / 7;
+        align-self: end;
+        margin: 0 0 0.5rem;
+        font-size: 0.66rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
+
+      .content-section {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      .content-section__index {
+        grid-column: 1 / 4;
+      }
+
+      .content-section__body {
+        grid-column: 5 / 12;
+      }
+
+      .bio .content-section__body {
+        grid-column: 6 / 12;
+      }
+
+      .links .content-section__body {
+        grid-column: 4 / 13;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      .skip-link,
+      .section-nav {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="poster">
+    <header class="masthead">
+      <p class="masthead__mark">JC / Personal index</p>
+      <nav class="section-nav" aria-label="Page sections">
+        <ul>
+          <li><a href="#biography">01 Biography</a></li>
+          <li><a href="#work">02 Work</a></li>
+          <li><a href="#links">03 Links</a></li>
+        </ul>
+      </nav>
+      <p class="masthead__edition">Concept 03 / 2026</p>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Professional profile</p>
+        <h1 id="page-title">
+          <span>Javier</span>
+          <span>Contreras</span>
+        </h1>
+
+        <div class="hero__composition">
+          <div class="hero__intro">
+            <p>[Short professional introduction to be provided. This space is reserved for Javier’s role, focus, and background.]</p>
+            <p class="placeholder-note">Introduction / placeholder copy</p>
+          </div>
+
+          <p class="orientation" aria-hidden="true">Selected work · specifications · professional links</p>
+
+          <figure class="portrait">
+            <div
+              class="portrait__frame"
+              role="img"
+              aria-label="Portrait placeholder for Javier Contreras"
+            >
+              <span class="portrait__label">Portrait placeholder</span>
+            </div>
+            <figcaption>
+              <span>Profile image</span>
+              <span>Replace with portrait</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="content-section bio" id="biography" aria-labelledby="biography-title">
+        <p class="content-section__index" aria-hidden="true">01</p>
+        <div class="content-section__body">
+          <span class="content-section__label">Biography</span>
+          <h2 id="biography-title">Briefly,<br>Javier.</h2>
+          <p class="content-section__lead">[Biography placeholder: add a concise, factual introduction covering professional experience, areas of focus, and current work.]</p>
+        </div>
+      </section>
+
+      <section class="content-section work" id="work" aria-labelledby="work-title">
+        <p class="content-section__index" aria-hidden="true">02</p>
+        <div class="content-section__body">
+          <span class="content-section__label">Selected work</span>
+          <h2 id="work-title">Work &amp;<br>standards.</h2>
+          <p class="content-section__lead">A direct index for specifications and projects, ready for verified titles and descriptions.</p>
+
+          <div class="work-grid">
+            <article class="work-item">
+              <span class="work-item__number" aria-hidden="true">A</span>
+              <div>
+                <h3>Specifications</h3>
+                <p>[Specification titles and Javier’s factual contribution details]</p>
+              </div>
+              <a class="placeholder-link" href="#specifications-placeholder">[Specifications links]</a>
+            </article>
+
+            <article class="work-item">
+              <span class="work-item__number" aria-hidden="true">B</span>
+              <div>
+                <h3>Projects</h3>
+                <p>[Selected project names and short verified descriptions]</p>
+              </div>
+              <a class="placeholder-link" href="#projects-placeholder">[Projects links]</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section links" id="links" aria-labelledby="links-title">
+        <p class="content-section__index" aria-hidden="true">03</p>
+        <div class="content-section__body">
+          <span class="content-section__label">Professional links</span>
+          <h2 id="links-title">Find Javier.</h2>
+
+          <ul class="link-directory">
+            <li id="linkedin-placeholder">
+              <a href="#linkedin-placeholder" aria-label="LinkedIn, placeholder link destination">
+                <span class="link-directory__number">01</span>
+                <span>
+                  <span class="link-directory__name">LinkedIn</span>
+                  <span class="link-directory__value">[LinkedIn profile URL]</span>
+                </span>
+                <span class="link-directory__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li id="github-placeholder">
+              <a href="#github-placeholder" aria-label="GitHub, placeholder link destination">
+                <span class="link-directory__number">02</span>
+                <span>
+                  <span class="link-directory__name">GitHub</span>
+                  <span class="link-directory__value">[GitHub profile URL]</span>
+                </span>
+                <span class="link-directory__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li id="gerrit-placeholder">
+              <a href="#gerrit-placeholder" aria-label="Gerrit, placeholder link destination">
+                <span class="link-directory__number">03</span>
+                <span>
+                  <span class="link-directory__name">Gerrit</span>
+                  <span class="link-directory__value">[Gerrit account URL]</span>
+                </span>
+                <span class="link-directory__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li id="specifications-placeholder">
+              <a href="#specifications-placeholder" aria-label="Specifications, placeholder link destination">
+                <span class="link-directory__number">04</span>
+                <span>
+                  <span class="link-directory__name">Specifications</span>
+                  <span class="link-directory__value">[Specification links and titles]</span>
+                </span>
+                <span class="link-directory__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li id="projects-placeholder">
+              <a href="#projects-placeholder" aria-label="Projects, placeholder link destination">
+                <span class="link-directory__number">05</span>
+                <span>
+                  <span class="link-directory__name">Projects</span>
+                  <span class="link-directory__value">[Project links and descriptions]</span>
+                </span>
+                <span class="link-directory__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="link-note">All destinations and supporting text shown above are explicit placeholders for verified professional information.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Javier Contreras / Personal website mockup</p>
+      <a href="#main-content">Back to top ↑</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Split profile and project grid visual mockup for Javier Contreras's personal website."
+  >
+  <title>Javier Contreras — Profile &amp; Project Grid Mockup</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f4f4f0;
+      --surface: #fafaf7;
+      --ink: #202522;
+      --muted: #626963;
+      --subtle: #69706b;
+      --rule: #cfd2cc;
+      --rule-strong: #aeb4ae;
+      --accent: #315d6d;
+      --accent-dark: #214654;
+      --portrait: #e2e4df;
+      --portrait-mark: #b6bcb7;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --page-width: 90rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 20rem;
+      min-height: 100vh;
+      margin: 0;
+      border-top: 0.25rem solid var(--accent);
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #d5e1e4;
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.22em;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration-thickness: 0.12em;
+    }
+
+    a:focus-visible {
+      border-radius: 0.1rem;
+      outline: 0.2rem solid var(--accent);
+      outline-offset: 0.25rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 20;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.7rem 0.95rem;
+      background: var(--ink);
+      color: var(--surface);
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform 150ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--page-width));
+      margin-inline: auto;
+    }
+
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .masthead__inner {
+      display: flex;
+      min-height: 4.25rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .site-mark {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.09em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .site-mark__initials {
+      display: inline-grid;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid var(--ink);
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .site-mark__label {
+      display: none;
+    }
+
+    .primary-nav ul {
+      display: flex;
+      gap: 0.15rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .primary-nav a {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      padding-inline: 0.6rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .primary-nav a:hover {
+      color: var(--accent-dark);
+    }
+
+    .page-layout {
+      display: grid;
+      gap: 0;
+    }
+
+    .profile {
+      padding-block: 3rem 3.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .profile__inner {
+      max-width: 31rem;
+    }
+
+    .portrait {
+      width: clamp(9rem, 42vw, 12.5rem);
+      margin: 0 0 2rem;
+    }
+
+    .portrait svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      border: 1px solid var(--rule-strong);
+      border-radius: 50%;
+      background: var(--portrait);
+    }
+
+    .portrait figcaption {
+      margin-top: 0.65rem;
+      color: var(--subtle);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.07em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .eyebrow,
+    .section-label,
+    .entry-type,
+    .entry-index,
+    .contact-heading {
+      font-size: 0.7rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin-bottom: 1.25rem;
+      font-size: clamp(2.8rem, 13vw, 4.75rem);
+      font-weight: 500;
+      letter-spacing: -0.052em;
+      line-height: 0.94;
+    }
+
+    .biography {
+      max-width: 29rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.68;
+    }
+
+    .placeholder {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .contact {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-heading {
+      margin: 0 0 0.55rem;
+      color: var(--subtle);
+    }
+
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list li + li {
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+      min-height: 3.65rem;
+      align-items: center;
+      gap: 0.75rem;
+      padding-block: 0.55rem;
+      text-decoration: none;
+    }
+
+    .contact-link:hover .contact-link__label {
+      text-decoration: underline;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.22em;
+    }
+
+    .contact-icon {
+      display: grid;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--accent-dark);
+      place-items: center;
+    }
+
+    .contact-icon svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .contact-link__text {
+      display: grid;
+      min-width: 0;
+      gap: 0.05rem;
+    }
+
+    .contact-link__label {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .contact-link__value {
+      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-size: 0.73rem;
+      line-height: 1.4;
+    }
+
+    .external-arrow {
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .work {
+      min-width: 0;
+      padding-block: 3.25rem 2rem;
+      scroll-margin-top: 1rem;
+    }
+
+    .work-header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 0.75rem;
+      color: var(--accent-dark);
+    }
+
+    .section-label::before {
+      width: 1.8rem;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h2 {
+      max-width: 13ch;
+      margin-bottom: 0;
+      font-size: clamp(2.35rem, 10vw, 4.65rem);
+      font-weight: 500;
+      letter-spacing: -0.048em;
+      line-height: 0.98;
+    }
+
+    .work-intro {
+      max-width: 35rem;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .placeholder-notice {
+      max-width: 35rem;
+      margin: 0;
+      padding-left: 0.85rem;
+      border-left: 0.16rem solid var(--accent);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1px;
+      margin: 0;
+      padding: 1px;
+      background: var(--rule-strong);
+      list-style: none;
+    }
+
+    .work-grid > li {
+      min-width: 0;
+      background: var(--surface);
+    }
+
+    .work-entry {
+      position: relative;
+      display: flex;
+      min-height: 18rem;
+      flex-direction: column;
+      padding: 1.4rem;
+      transition: background-color 150ms ease;
+    }
+
+    .work-entry:hover,
+    .work-entry:focus-within {
+      background: #ffffff;
+    }
+
+    .entry-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .entry-type {
+      color: var(--accent-dark);
+    }
+
+    .entry-index {
+      color: var(--subtle);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .work-entry h3 {
+      max-width: 19ch;
+      margin-bottom: 0.8rem;
+      font-size: clamp(1.55rem, 6vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    .entry-title-link {
+      text-decoration: none;
+    }
+
+    .entry-title-link:hover,
+    .entry-title-link:focus-visible {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-decoration-thickness: 0.06em;
+      text-underline-offset: 0.16em;
+    }
+
+    .entry-title-link::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+    }
+
+    .entry-description {
+      max-width: 36rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .entry-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem 1rem;
+      margin-top: auto;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--rule);
+      color: var(--subtle);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .entry-footer__link {
+      color: var(--accent-dark);
+    }
+
+    .work-entry--featured {
+      min-height: 20rem;
+    }
+
+    .work-entry--featured h3 {
+      max-width: 20ch;
+      font-size: clamp(1.85rem, 8vw, 2.75rem);
+    }
+
+    .site-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding-block: 1.35rem 2rem;
+      border-top: 1px solid var(--rule);
+      color: var(--subtle);
+      font-size: 0.7rem;
+      letter-spacing: 0.035em;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (min-width: 34rem) {
+      .site-mark__label {
+        display: inline;
+      }
+
+      .primary-nav ul {
+        gap: 0.5rem;
+      }
+
+      .work-entry {
+        padding: 1.7rem;
+      }
+    }
+
+    @media (min-width: 44rem) {
+      .shell {
+        width: min(calc(100% - 4rem), var(--page-width));
+      }
+
+      .profile {
+        padding-block: 4.5rem;
+      }
+
+      .work {
+        padding-block: 4.5rem 3rem;
+      }
+
+      .work-header {
+        grid-template-columns: minmax(16rem, 0.9fr) minmax(18rem, 1.1fr);
+        align-items: end;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .work-header__aside {
+        padding-bottom: 0.25rem;
+      }
+
+      .placeholder-notice {
+        margin-top: 1rem;
+      }
+
+      .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-grid > .work-grid__wide {
+        grid-column: 1 / -1;
+      }
+
+      .work-entry--featured {
+        min-height: 22rem;
+      }
+
+      .work-grid__wide .work-entry:not(.work-entry--featured) {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(17rem, 1.2fr);
+        grid-template-rows: auto 1fr auto;
+        column-gap: 2.5rem;
+      }
+
+      .work-grid__wide .work-entry:not(.work-entry--featured) .entry-header {
+        grid-column: 1 / -1;
+      }
+
+      .work-grid__wide .work-entry:not(.work-entry--featured) h3 {
+        grid-column: 1;
+      }
+
+      .work-grid__wide .work-entry:not(.work-entry--featured) .entry-description {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .work-grid__wide .work-entry:not(.work-entry--featured) .entry-footer {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 64rem) {
+      .masthead__inner {
+        min-height: 4.75rem;
+      }
+
+      .page-layout {
+        grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 2fr);
+      }
+
+      .profile {
+        border-right: 1px solid var(--rule);
+        border-bottom: 0;
+        padding: 5.25rem clamp(2.5rem, 4vw, 4.75rem) 5rem 0;
+      }
+
+      .profile__inner {
+        position: sticky;
+        top: 2rem;
+      }
+
+      .portrait {
+        width: clamp(10rem, 14vw, 13rem);
+      }
+
+      h1 {
+        font-size: clamp(3.3rem, 4.4vw, 4.75rem);
+      }
+
+      .work {
+        padding: 5.25rem 0 3rem clamp(2.75rem, 5vw, 6rem);
+      }
+
+      h2 {
+        font-size: clamp(3.2rem, 5vw, 4.65rem);
+      }
+
+      .site-footer {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 82rem) {
+      .page-layout {
+        grid-template-columns: minmax(20rem, 0.8fr) minmax(0, 2.2fr);
+      }
+
+      .work-entry--featured {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+        grid-template-rows: auto 1fr auto;
+        column-gap: 3rem;
+      }
+
+      .work-entry--featured .entry-header {
+        grid-column: 1 / -1;
+      }
+
+      .work-entry--featured h3 {
+        grid-column: 1;
+        align-self: start;
+      }
+
+      .work-entry--featured .entry-description {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: start;
+      }
+
+      .work-entry--featured .entry-footer {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      body {
+        border-top: 0;
+        background: #fff;
+      }
+
+      .skip-link,
+      .primary-nav {
+        display: none;
+      }
+
+      .shell {
+        width: 100%;
+      }
+
+      .page-layout {
+        grid-template-columns: 16rem 1fr;
+      }
+
+      .profile {
+        border-right: 1px solid var(--rule);
+        border-bottom: 0;
+        padding-right: 2rem;
+      }
+
+      .work {
+        padding-left: 2rem;
+      }
+
+      .work-entry,
+      .work-entry--featured {
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <a class="site-mark" href="#main-content" aria-label="Javier Contreras, back to profile">
+        <span class="site-mark__initials" aria-hidden="true">JC</span>
+        <span class="site-mark__label">Personal portfolio</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#selected-work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout shell" id="main-content">
+    <header class="profile" aria-labelledby="profile-title">
+      <div class="profile__inner">
+        <figure class="portrait">
+          <svg
+            viewBox="0 0 240 240"
+            role="img"
+            aria-labelledby="portrait-title portrait-description"
+          >
+            <title id="portrait-title">Portrait placeholder for Javier Contreras</title>
+            <desc id="portrait-description">
+              A neutral circular silhouette marks where Javier's profile photograph will appear.
+            </desc>
+            <rect width="240" height="240" fill="#e2e4df"/>
+            <circle cx="120" cy="88" r="42" fill="#b6bcb7"/>
+            <path d="M43 211c7-59 34-91 77-91s70 32 77 91H43Z" fill="#b6bcb7"/>
+            <circle cx="120" cy="120" r="116" fill="none" stroke="#aeb4ae" stroke-width="2"/>
+          </svg>
+          <figcaption>Portrait placeholder</figcaption>
+        </figure>
+
+        <p class="eyebrow">Profile / Placeholder</p>
+        <h1 id="profile-title">Javier Contreras</h1>
+        <p class="biography">
+          <span class="placeholder">[Short professional biography]</span>
+          Add two or three factual sentences about Javier’s work, areas of focus, and professional
+          perspective once final copy is provided.
+        </p>
+
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+          <h2 class="contact-heading" id="contact-heading">Contact &amp; profiles</h2>
+          <ul class="contact-list">
+            <li>
+              <a
+                class="contact-link"
+                href="mailto:replace-with-email@example.com"
+                aria-label="Email Javier Contreras using placeholder email address"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="2.75" y="5.25" width="18.5" height="13.5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="m3.5 6 8.5 6.4L20.5 6" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </span>
+                <span class="contact-link__text">
+                  <span class="contact-link__label">Email</span>
+                  <span class="contact-link__value">replace-with-email@example.com</span>
+                </span>
+                <span class="external-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="contact-link"
+                href="https://example.com/replace-with-linkedin-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile, placeholder URL, opens in a new tab"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="2.75" y="2.75" width="18.5" height="18.5" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="7.5" cy="8" r="1.25" fill="currentColor"/>
+                    <path d="M6.25 11v6.75M11 17.75V11m0 2.1c.7-1.4 1.8-2.1 3.25-2.1 2.1 0 3.5 1.45 3.5 4.15v2.6" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                </span>
+                <span class="contact-link__text">
+                  <span class="contact-link__label">LinkedIn</span>
+                  <span class="contact-link__value">example.com/replace-with-linkedin-profile</span>
+                </span>
+                <span class="external-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="contact-link"
+                href="https://example.com/replace-with-github-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile, placeholder URL, opens in a new tab"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="6" cy="5.5" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="18" cy="8.5" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="8.5" cy="18" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M6 7.75v3.5c0 2.5 1 3.5 2.5 4.5V12c0-2.3 1.35-3.5 3.5-3.5h3.75" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </span>
+                <span class="contact-link__text">
+                  <span class="contact-link__label">GitHub</span>
+                  <span class="contact-link__value">example.com/replace-with-github-profile</span>
+                </span>
+                <span class="external-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="contact-link"
+                href="https://example.com/replace-with-gerrit-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Gerrit profile, placeholder URL, opens in a new tab"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="5" cy="6" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="19" cy="6" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="12" cy="18" r="2.25" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M7.2 6h9.6M6.5 7.8l4.3 8.3M17.5 7.8l-4.3 8.3" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                </span>
+                <span class="contact-link__text">
+                  <span class="contact-link__label">Gerrit</span>
+                  <span class="contact-link__value">example.com/replace-with-gerrit-profile</span>
+                </span>
+                <span class="external-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </header>
+
+    <section class="work" id="selected-work" aria-labelledby="work-heading">
+      <header class="work-header">
+        <div>
+          <p class="section-label">Selected index</p>
+          <h2 id="work-heading">Projects &amp; specifications</h2>
+        </div>
+        <div class="work-header__aside">
+          <p class="work-intro">
+            A curated view of selected technical work, organized for quick scanning without
+            losing useful context.
+          </p>
+          <p class="placeholder-notice">
+            All titles, descriptions, roles, dates, and destinations below are explicit placeholders.
+          </p>
+        </div>
+      </header>
+
+      <ol class="work-grid">
+        <li class="work-grid__wide">
+          <article class="work-entry work-entry--featured">
+            <header class="entry-header">
+              <span class="entry-type">Featured project / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">01</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-featured-project"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Featured project title placeholder</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Add a concise, verified overview of the project, the problem it addresses, and
+              Javier’s role or contribution.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Role placeholder] · [Year]</span>
+              <span class="entry-footer__link">View project ↗</span>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Specification / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">02</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-specification-one"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Specification title placeholder 01</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Standards body, scope, and factual contribution details to be supplied.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Standards body]</span>
+              <span class="entry-footer__link">Read specification ↗</span>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Specification / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">03</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-specification-two"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Specification title placeholder 02</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Add a brief description of the specification and accurate participation details.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Working group]</span>
+              <span class="entry-footer__link">Read specification ↗</span>
+            </footer>
+          </article>
+        </li>
+
+        <li class="work-grid__wide">
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Project / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">04</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-project-two"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Project title placeholder 02</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Use this wider entry for a project that benefits from a little more context:
+              purpose, contribution, collaborators, and a verifiable outcome.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Project category] · [Year]</span>
+              <span class="entry-footer__link">View project ↗</span>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Project / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">05</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-project-three"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Project title placeholder 03</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Short, factual project summary and role placeholder.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Role placeholder]</span>
+              <span class="entry-footer__link">View project ↗</span>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Specification / Placeholder</span>
+              <span class="entry-index" aria-hidden="true">06</span>
+            </header>
+            <h3>
+              <a
+                class="entry-title-link"
+                href="https://example.com/replace-with-specification-three"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Specification title placeholder 03</span>
+                <span class="visually-hidden">
+                  — placeholder URL, opens in a new tab
+                </span>
+              </a>
+            </h3>
+            <p class="entry-description">
+              [Specification context and contribution placeholder.]
+            </p>
+            <footer class="entry-footer">
+              <span>[Standards body]</span>
+              <span class="entry-footer__link">Read specification ↗</span>
+            </footer>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <footer class="site-footer">
+      <p>Javier Contreras · Personal website mockup</p>
+      <p>Profile, content, and links are placeholders pending verified details.</p>
+    </footer>
+  </main>
+</body>
+</html>
