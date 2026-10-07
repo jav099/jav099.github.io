@@ -16,15 +16,23 @@
   <header class="masthead">
     <div class="shell masthead__inner">
       <a class="site-mark" href="#profile" aria-label="Javier Contreras, go to profile">
-        <span class="site-mark__initials" aria-hidden="true">JC</span>
+        <span class="site-mark__initials" aria-hidden="true">JCT</span>
         <span class="site-mark__label">Javier Contreras</span>
       </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
         <ul>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#selected-work">Work</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              class="resume-link"
+              href="https://github.com/jav099/resume/raw/refs/heads/main/resume.pdf"
+              download="Javier-Contreras-resume.pdf"
+            >
+              Download resume
+              <span class="download-arrow" aria-hidden="true">↓</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -42,17 +50,18 @@
           fetchpriority="high"
         >
 
-        <p class="eyebrow">Software Engineer</p>
+        <p class="eyebrow">Software Engineer II</p>
         <h1 id="profile-title">Javier Contreras</h1>
         <p class="biography">
-          I am a Software Engineer at Microsoft Edge. I work on accessibility and CSS layout in Chromium.
-          I also help write web standards and build tools for engineers.
+          I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly
+          contributing to Chromium. I have worked on accessibility, CSS, and layout. I have also
+          helped write CSS specs and built tools for engineers.
         </p>
 
         <dl class="profile-facts" aria-label="Background">
           <div>
             <dt>Microsoft</dt>
-            <dd>Since September 2022</dd>
+            <dd>Since August 2022</dd>
           </div>
           <div>
             <dt>Education</dt>
@@ -60,7 +69,7 @@
           </div>
           <div>
             <dt>Graduate study</dt>
-            <dd>Master’s program in computer science, University of Washington</dd>
+            <dd>Master’s program in computer science, University of Washington.</dd>
           </div>
           <div>
             <dt>Background</dt>
@@ -147,7 +156,7 @@
                   </svg>
                 </span>
                 <span class="contact-link__text">
-                  <span class="contact-link__label">Chromium reviews</span>
+                  <span class="contact-link__label">Chromium changes</span>
                   <span class="contact-link__value">Public changes</span>
                 </span>
                 <span class="external-arrow" aria-hidden="true">↗</span>
@@ -162,12 +171,9 @@
     <section class="work" id="selected-work" aria-labelledby="work-heading">
       <header class="work-header">
         <div>
-          <p class="section-label">Selected work</p>
+          <p class="section-label">Experience</p>
           <h2 id="work-heading">Work and community</h2>
         </div>
-        <p class="work-intro">
-          My work covers browser accessibility, CSS layout, developer tools, and teaching.
-        </p>
       </header>
 
       <ol class="work-grid">
@@ -180,7 +186,7 @@
             <h3>
               <a
                 class="entry-title-link"
-                href="https://drafts.csswg.org/css-gaps-1/"
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Gaps"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -189,12 +195,15 @@
               </a>
             </h3>
             <p class="entry-description">
-              A direct way to draw rules inside Grid, Flexbox, and multi-column gaps. I helped
-              write the standard and built much of the Flexbox and multi-column work in Chromium.
+              A browser-native API to draw decorations inside Grid, Flexbox, Grid Lanes, and
+              multi-column gaps. I helped write the official spec and designed and implemented
+              the architecture for the feature in Chromium.
             </p>
             <footer class="entry-footer">
               <span>CSS Working Group · Chromium</span>
-              <span class="entry-footer__link">Read the draft ↗</span>
+              <span class="entry-footer__link">
+                Read the MDN docs <span class="link-arrow" aria-hidden="true">↗</span>
+              </span>
             </footer>
           </article>
         </li>
@@ -217,14 +226,16 @@
               </a>
             </h3>
             <p class="entry-description">
-              ViewsAX is a large update to accessibility in Chromium’s native UI. I helped make
-              accessibility data more current and reliable. My work covered cached state,
-              tooltips, virtual nodes, and change updates. I am also an owner of Chromium’s
-              <code>ui/views/accessibility</code> area.
+              ViewsAX is a large refactor of accessibility in Chromium’s native UI. I helped make
+              accessibility data more current and reliable across Chromium’s Views. My work
+              covered cached state, tooltips, virtual nodes, and change updates. Through this
+              work, I became an owner of Chromium’s <code>ui/views/accessibility</code> path.
             </p>
             <footer class="entry-footer">
               <span>Open source · Chromium</span>
-              <span class="entry-footer__link">Browse the source ↗</span>
+              <span class="entry-footer__link">
+                Browse the source <span class="link-arrow" aria-hidden="true">↗</span>
+              </span>
             </footer>
           </article>
         </li>
@@ -238,21 +249,23 @@
             <h3>
               <a
                 class="entry-title-link"
-                href="https://drafts.csswg.org/css-gaps-1/#acknowledgements"
+                href="https://www.w3.org/TR/css-gaps-1/#acknowledgements"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Writing the web standard
+                Writing the spec
                 <span class="visually-hidden">(opens in a new tab)</span>
               </a>
             </h3>
             <p class="entry-description">
-              I help turn browser work into clear CSS rules and tests. The CSS Gaps draft thanks
-              me for significant work on its text, examples, and Web Platform Tests.
+              I was a big contributor to the CSS Gap Decorations spec, contributing normative
+              text and cross-platform tests for different browsers.
             </p>
             <footer class="entry-footer">
               <span>Text · Examples · Tests</span>
-              <span class="entry-footer__link">Read the note ↗</span>
+              <span class="entry-footer__link">
+                Read the note <span class="link-arrow" aria-hidden="true">↗</span>
+              </span>
             </footer>
           </article>
         </li>
@@ -275,13 +288,16 @@
               </a>
             </h3>
             <p class="entry-description">
-              Since I joined Microsoft in September 2022, I have the second-highest Chromium
-              commit count among Microsoft contributors for that period. I rank third all-time
-              among Microsoft contributors.
+              Since I joined Microsoft in August 2022, I have the highest Chromium commit count
+              among Microsoft contributors for that period. My work has spanned accessibility,
+              CSS, layout, animations, painting, and Chromium’s agentic tooling, including skills
+              and instructions.
             </p>
             <footer class="entry-footer">
-              <span>Microsoft · September 2022–present</span>
-              <span class="entry-footer__link">View public changes ↗</span>
+              <span>Microsoft · August 2022–present</span>
+              <span class="entry-footer__link">
+                View public changes <span class="link-arrow" aria-hidden="true">↗</span>
+              </span>
             </footer>
           </article>
         </li>
@@ -294,8 +310,9 @@
             </header>
             <h3>Dragon</h3>
             <p class="entry-description">
-              I contribute to Dragon, a Microsoft Edge project that helps engineers organize and
-              run software work. I focus on making the product reliable and easier to use.
+              I contributed to Dragon, an internal Microsoft Edge project that helps engineers
+              organize and run software work. My work spanned the chat backend architecture and
+              frontend design.
             </p>
             <footer class="entry-footer">
               <span>Microsoft Edge · High-level overview</span>
@@ -311,10 +328,53 @@
             </header>
             <h3>Computer science instructor</h3>
             <p class="entry-description">
-              I volunteered at Seattle World School as a computer science instructor.
+              I volunteered at Seattle World School, a school for immigrants, as a high school
+              computer science instructor, helping teach concepts and design the course.
             </p>
             <footer class="entry-footer">
               <span>Seattle World School</span>
+            </footer>
+          </article>
+        </li>
+
+        <li class="work-grid__speaking">
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Speaking · Conference</span>
+              <span class="entry-index" aria-hidden="true">07</span>
+            </header>
+            <h3>BlinkOn conference speaker</h3>
+            <p class="entry-description">
+              Presented CSS Gap Decorations at Chromium’s BlinkOn conference.
+            </p>
+            <footer class="entry-footer">
+              <span>BlinkOn · Chromium</span>
+              <a
+                class="entry-footer__link"
+                href="https://www.youtube.com/watch?v=eBjie3j_yZg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Watch the talk <span class="link-arrow" aria-hidden="true">↗</span>
+                <span class="visually-hidden">(opens in a new tab)</span>
+              </a>
+            </footer>
+          </article>
+        </li>
+
+        <li class="work-grid__speaking">
+          <article class="work-entry">
+            <header class="entry-header">
+              <span class="entry-type">Speaking · University</span>
+              <span class="entry-index" aria-hidden="true">08</span>
+            </header>
+            <h3>University of Michigan invited speaker</h3>
+            <p class="entry-description">
+              Gave a talk about contributing to open source and Chromium at the University of
+              Michigan.
+            </p>
+            <footer class="entry-footer">
+              <span>University of Michigan</span>
             </footer>
           </article>
         </li>
@@ -323,7 +383,6 @@
 
     <footer class="site-footer">
       <p>© 2026 Javier Contreras</p>
-      <p>Built with CSS Grid, Flexbox, and CSS gap decorations.</p>
     </footer>
   </main>
 </body>

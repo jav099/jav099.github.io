@@ -10,31 +10,34 @@ This file is the editable source for the text in `index.html`.
 ## Header and navigation
 
 - Skip link: `Skip to main content`
-- Site initials: `JC`
+- Site initials: `JCT`
 - Site name: `Javier Contreras`
 - Site link label: `Javier Contreras, go to profile`
 - Navigation label: `Primary navigation`
 - Navigation links:
-  - `Profile`
-  - `Work`
-  - `Contact`
+  - Label: `Contact`
+  - Target: `#contact`
+  - Label: `Download resume`
+  - Arrow: `↓`
+  - URL: `https://github.com/jav099/resume/raw/refs/heads/main/resume.pdf`
+  - Download filename: `Javier-Contreras-resume.pdf`
 
 ## Profile
 
 - Portrait alternative text: `Javier Contreras by the water`
-- Role: `Software Engineer`
+- Role: `Software Engineer II`
 - Name: `Javier Contreras`
-- Biography: `I am a Software Engineer at Microsoft Edge. I work on accessibility and CSS layout in Chromium. I also help write web standards and build tools for engineers.`
+- Biography: `I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly contributing to Chromium. I have worked on accessibility, CSS, and layout. I have also helped write CSS specs and built tools for engineers.`
 - Background list label: `Background`
 
 ### Profile facts
 
 - Label: `Microsoft`
-  - Value: `Since September 2022`
+  - Value: `Since August 2022`
 - Label: `Education`
   - Value: `University of Michigan, 2018–2022`
 - Label: `Graduate study`
-  - Value: `Master’s program in computer science, University of Washington`
+  - Value: `Master’s program in computer science, University of Washington.`
 - Label: `Background`
   - Value: `Born in Mexico City in 1999`
 
@@ -67,7 +70,7 @@ This file is the editable source for the text in `index.html`.
 
 ### Chromium reviews
 
-- Label: `Chromium reviews`
+- Label: `Chromium changes`
 - Value: `Public changes`
 - URL: `https://chromium-review.googlesource.com/q/owner:javiercon%2540microsoft.com`
 - Arrow: `↗`
@@ -75,20 +78,19 @@ This file is the editable source for the text in `index.html`.
 
 ## Work section
 
-- Section label: `Selected work`
+- Section label: `Experience`
 - Section title: `Work and community`
-- Introduction: `My work covers browser accessibility, CSS layout, developer tools, and teaching.`
 
 ### 01: CSS Gap Decorations
 
 - Category: `CSS · Specification`
 - Index: `01`
 - Title: `CSS Gap Decorations`
-- URL: `https://drafts.csswg.org/css-gaps-1/`
+- URL: `https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Gaps`
 - Link note: `(opens in a new tab)`
-- Description: `A direct way to draw rules inside Grid, Flexbox, and multi-column gaps. I helped write the standard and built much of the Flexbox and multi-column work in Chromium.`
+- Description: `A browser-native API to draw decorations inside Grid, Flexbox, Grid Lanes, and multi-column gaps. I helped write the official spec and designed and implemented the architecture for the feature in Chromium.`
 - Footer: `CSS Working Group · Chromium`
-- Footer link: `Read the draft ↗`
+- Footer link: `Read the MDN docs ↗`
 
 ### 02: ViewsAX
 
@@ -97,7 +99,7 @@ This file is the editable source for the text in `index.html`.
 - Title: `ViewsAX`
 - URL: `https://chromium.googlesource.com/chromium/src/+/main/ui/views/accessibility/`
 - Link note: `(opens in a new tab)`
-- Description: `ViewsAX is a large update to accessibility in Chromium’s native UI. I helped make accessibility data more current and reliable. My work covered cached state, tooltips, virtual nodes, and change updates. I am also an owner of Chromium’s ui/views/accessibility area.`
+- Description: `ViewsAX is a large refactor of accessibility in Chromium’s native UI. I helped make accessibility data more current and reliable across Chromium’s Views. My work covered cached state, tooltips, virtual nodes, and change updates. Through this work, I became an owner of Chromium’s ui/views/accessibility path.`
 - Code text in description: `ui/views/accessibility`
 - Footer: `Open source · Chromium`
 - Footer link: `Browse the source ↗`
@@ -106,10 +108,10 @@ This file is the editable source for the text in `index.html`.
 
 - Category: `Standards · CSSWG`
 - Index: `03`
-- Title: `Writing the web standard`
-- URL: `https://drafts.csswg.org/css-gaps-1/#acknowledgements`
+- Title: `Writing the spec`
+- URL: `https://www.w3.org/TR/css-gaps-1/#acknowledgements`
 - Link note: `(opens in a new tab)`
-- Description: `I help turn browser work into clear CSS rules and tests. The CSS Gaps draft thanks me for significant work on its text, examples, and Web Platform Tests.`
+- Description: `I was a big contributor to the CSS Gap Decorations spec, contributing normative text and cross-platform tests for different browsers.`
 - Footer: `Text · Examples · Tests`
 - Footer link: `Read the note ↗`
 
@@ -120,8 +122,8 @@ This file is the editable source for the text in `index.html`.
 - Title: `Public Chromium work`
 - URL: `https://chromium-review.googlesource.com/q/owner:javiercon%2540microsoft.com`
 - Link note: `(opens in a new tab)`
-- Description: `Since I joined Microsoft in September 2022, I have the second-highest Chromium commit count among Microsoft contributors for that period. I rank third all-time among Microsoft contributors.`
-- Footer: `Microsoft · September 2022–present`
+- Description: `Since I joined Microsoft in August 2022, I have the highest Chromium commit count among Microsoft contributors for that period. My work has spanned accessibility, CSS, layout, animations, painting, and Chromium’s agentic tooling, including skills and instructions.`
+- Footer: `Microsoft · August 2022–present`
 - Footer link: `View public changes ↗`
 
 ### 05: Dragon
@@ -129,7 +131,7 @@ This file is the editable source for the text in `index.html`.
 - Category: `Developer tools`
 - Index: `05`
 - Title: `Dragon`
-- Description: `I contribute to Dragon, a Microsoft Edge project that helps engineers organize and run software work. I focus on making the product reliable and easier to use.`
+- Description: `I contributed to Dragon, an internal Microsoft Edge project that helps engineers organize and run software work. My work spanned the chat backend architecture and frontend design.`
 - Footer: `Microsoft Edge · High-level overview`
 
 ### 06: Computer science instructor
@@ -137,10 +139,28 @@ This file is the editable source for the text in `index.html`.
 - Category: `Volunteering · Education`
 - Index: `06`
 - Title: `Computer science instructor`
-- Description: `I volunteered at Seattle World School as a computer science instructor.`
+- Description: `I volunteered at Seattle World School, a school for immigrants, as a high school computer science instructor, helping teach concepts and design the course.`
 - Footer: `Seattle World School`
+
+### 07: BlinkOn conference speaker
+
+- Category: `Speaking · Conference`
+- Index: `07`
+- Title: `BlinkOn conference speaker`
+- Description: `Presented CSS Gap Decorations at Chromium’s BlinkOn conference.`
+- URL: `https://www.youtube.com/watch?v=eBjie3j_yZg`
+- Link note: `(opens in a new tab)`
+- Footer: `BlinkOn · Chromium`
+- Footer link: `Watch the talk ↗`
+
+### 08: University of Michigan invited speaker
+
+- Category: `Speaking · University`
+- Index: `08`
+- Title: `University of Michigan invited speaker`
+- Description: `Gave a talk about contributing to open source and Chromium at the University of Michigan.`
+- Footer: `University of Michigan`
 
 ## Page footer
 
 - Copyright: `© 2026 Javier Contreras`
-- Build note: `Built with CSS Grid, Flexbox, and CSS gap decorations.`
