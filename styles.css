@@ -501,6 +501,13 @@ h2 {
     transform 150ms ease;
 }
 
+.work-grid__emphasized .work-entry {
+  --surface-hover: color-mix(in srgb, var(--entry-accent) 20%, var(--surface));
+  padding: clamp(1.35rem, 3vw, 2rem);
+  background: var(--interactive-tint);
+  background: color-mix(in srgb, var(--entry-accent) 13%, var(--surface));
+}
+
 .entry-header {
   display: flex;
   align-items: baseline;

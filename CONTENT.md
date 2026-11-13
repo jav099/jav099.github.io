@@ -27,7 +27,7 @@ This file is the editable source for the text in `index.html`.
 - Portrait alternative text: `Javier Contreras by the water`
 - Role: `Software Engineer II`
 - Name: `Javier Contreras`
-- Biography: `I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly contributing to Chromium. I have worked on accessibility, CSS, and layout. I have also helped write CSS specs and built tools for engineers.`
+- Biography: `I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly contributing to Chromium. I have worked on accessibility, CSS, and layout. I have also helped write CSS specs and built tools for engineers. I built tools, skills, instructions, plugins for AI development in Edge/Chromium, and I am passionate about leveraging AI for engineering tasks.`
 - Background list label: `Background`
 
 ### Profile facts
@@ -92,10 +92,21 @@ This file is the editable source for the text in `index.html`.
 - Footer: `CSS Working Group · Chromium`
 - Footer link: `Read the MDN docs ↗`
 
-### 02: ViewsAX
+### 02: Public Chromium work
+
+- Category: `Contribution record · Chromium`
+- Index: `02`
+- Title: `Public Chromium work`
+- URL: `https://chromium-review.googlesource.com/q/owner:javiercon%2540microsoft.com`
+- Link note: `(opens in a new tab)`
+- Description: `Since I joined Microsoft in August 2022, I have the highest Chromium commit count among Microsoft contributors for that period. My work has spanned accessibility, CSS, layout, animations, painting, and Chromium’s agentic tooling, including skills and instructions.`
+- Footer: `Microsoft · August 2022–present`
+- Footer link: `View public changes ↗`
+
+### 03: ViewsAX
 
 - Category: `Accessibility · Chromium`
-- Index: `02`
+- Index: `03`
 - Title: `ViewsAX`
 - URL: `https://chromium.googlesource.com/chromium/src/+/main/ui/views/accessibility/`
 - Link note: `(opens in a new tab)`
@@ -104,48 +115,26 @@ This file is the editable source for the text in `index.html`.
 - Footer: `Open source · Chromium`
 - Footer link: `Browse the source ↗`
 
-### 03: Writing the web standard
-
-- Category: `Standards · CSSWG`
-- Index: `03`
-- Title: `Writing the spec`
-- URL: `https://www.w3.org/TR/css-gaps-1/#acknowledgements`
-- Link note: `(opens in a new tab)`
-- Description: `I was a big contributor to the CSS Gap Decorations spec, contributing normative text and cross-platform tests for different browsers.`
-- Footer: `Text · Examples · Tests`
-- Footer link: `Read the note ↗`
-
-### 04: Public Chromium work
-
-- Category: `Contribution record · Chromium`
-- Index: `04`
-- Title: `Public Chromium work`
-- URL: `https://chromium-review.googlesource.com/q/owner:javiercon%2540microsoft.com`
-- Link note: `(opens in a new tab)`
-- Description: `Since I joined Microsoft in August 2022, I have the highest Chromium commit count among Microsoft contributors for that period. My work has spanned accessibility, CSS, layout, animations, painting, and Chromium’s agentic tooling, including skills and instructions.`
-- Footer: `Microsoft · August 2022–present`
-- Footer link: `View public changes ↗`
-
-### 05: Dragon
+### 04: Dragon
 
 - Category: `Developer tools`
-- Index: `05`
+- Index: `04`
 - Title: `Dragon`
 - Description: `I contributed to Dragon, an internal Microsoft Edge project that helps engineers organize and run software work. My work spanned the chat backend architecture and frontend design.`
 - Footer: `Microsoft Edge · High-level overview`
 
-### 06: Computer science instructor
+### 05: Agentic developer tools
 
-- Category: `Volunteering · Education`
-- Index: `06`
-- Title: `Computer science instructor`
-- Description: `I volunteered at Seattle World School, a school for immigrants, as a high school computer science instructor, helping teach concepts and design the course.`
-- Footer: `Seattle World School`
+- Category: `Developer tools · AI`
+- Index: `05`
+- Title: `Agentic developer tools`
+- Description: `I took a lead role in developing and designing toolsets for AI agents and engineers working in Chromium. I developed internal tools, skills, and agents for Edge’s agentic workflows, including an autonomous development workflow engine that turns Copilot CLI into a task queue and pipeline orchestrator for reusable pipelines of AI prompts and scripts.`
+- Footer: `Microsoft Edge · Internal tools`
 
-### 07: BlinkOn conference speaker
+### 06: BlinkOn conference speaker
 
 - Category: `Speaking · Conference`
-- Index: `07`
+- Index: `06`
 - Title: `BlinkOn conference speaker`
 - Description: `Presented CSS Gap Decorations at Chromium’s BlinkOn conference.`
 - URL: `https://www.youtube.com/watch?v=eBjie3j_yZg`
@@ -153,21 +142,29 @@ This file is the editable source for the text in `index.html`.
 - Footer: `BlinkOn · Chromium`
 - Footer link: `Watch the talk ↗`
 
-### 08: University of Michigan invited speaker
+### 07: University of Michigan invited speaker
 
 - Category: `Speaking · University`
-- Index: `08`
+- Index: `07`
 - Title: `University of Michigan invited speaker`
 - Description: `Gave a talk about contributing to open source and Chromium at the University of Michigan.`
 - Footer: `University of Michigan`
 
-### 09: AI mentorship
+### 08: AI mentorship
 
 - Category: `Mentorship · AI`
-- Index: `09`
+- Index: `08`
 - Title: `AI mentorship`
 - Description: `I mentor Microsoft Edge engineers on AI-assisted development, covering context windows, skills, instructions, agents, and GitHub Copilot. I create slides, playgrounds, and demos to help engineers put these tools into practice.`
 - Footer: `Microsoft Edge · 2026–present`
+
+### 09: Computer science instructor
+
+- Category: `Volunteering · Education`
+- Index: `09`
+- Title: `Computer science instructor`
+- Description: `I volunteered at Seattle World School, a school for immigrants, as a high school computer science instructor, helping teach concepts and design the course.`
+- Footer: `Seattle World School`
 
 ### 10: Intern mentorship
 
@@ -177,13 +174,16 @@ This file is the editable source for the text in `index.html`.
 - Description: `I mentored a Microsoft intern and helped them ship a CSS feature in Chromium.`
 - Footer: `Microsoft · Summer 2026`
 
-### 11: Agentic developer tools
+### 11: Writing the web standard
 
-- Category: `Developer tools · AI`
+- Category: `Standards · CSSWG`
 - Index: `11`
-- Title: `Agentic developer tools`
-- Description: `I took a lead role in developing and designing toolsets for AI agents and engineers working in Chromium. I developed internal tools, skills, and agents for Edge’s agentic workflows, including an autonomous development workflow engine that turns Copilot CLI into a task queue and pipeline orchestrator for reusable pipelines of AI prompts and scripts.`
-- Footer: `Microsoft Edge · Internal tools`
+- Title: `Writing the spec`
+- URL: `https://www.w3.org/TR/css-gaps-1/#acknowledgements`
+- Link note: `(opens in a new tab)`
+- Description: `I was a big contributor to the CSS Gap Decorations spec, contributing normative text and cross-platform tests for different browsers.`
+- Footer: `Text · Examples · Tests`
+- Footer link: `Read the note ↗`
 
 ## Page footer
 
