@@ -161,6 +161,30 @@ This file is the editable source for the text in `index.html`.
 - Description: `Gave a talk about contributing to open source and Chromium at the University of Michigan.`
 - Footer: `University of Michigan`
 
+### 09: AI mentorship
+
+- Category: `Mentorship · AI`
+- Index: `09`
+- Title: `AI mentorship`
+- Description: `I mentor Microsoft Edge engineers on AI-assisted development, covering context windows, skills, instructions, agents, and GitHub Copilot. I create slides, playgrounds, and demos to help engineers put these tools into practice.`
+- Footer: `Microsoft Edge · 2026–present`
+
+### 10: Intern mentorship
+
+- Category: `Mentorship · Chromium`
+- Index: `10`
+- Title: `Intern mentorship`
+- Description: `I mentored a Microsoft intern and helped them ship a CSS feature in Chromium.`
+- Footer: `Microsoft · Summer 2026`
+
+### 11: Agentic developer tools
+
+- Category: `Developer tools · AI`
+- Index: `11`
+- Title: `Agentic developer tools`
+- Description: `I took a lead role in developing and designing toolsets for AI agents and engineers working in Chromium. I developed internal tools, skills, and agents for Edge’s agentic workflows, including an autonomous development workflow engine that turns Copilot CLI into a task queue and pipeline orchestrator for reusable pipelines of AI prompts and scripts.`
+- Footer: `Microsoft Edge · Internal tools`
+
 ## Page footer
 
 - Copyright: `© 2026 Javier Contreras`
