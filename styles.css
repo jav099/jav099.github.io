@@ -24,6 +24,8 @@
   --entry-footer: #e5e8e4;
   --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --page-width: 90rem;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
 }
 
 *,
@@ -34,13 +36,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-block-start: 5.5rem;
+  scroll-padding-block-start: calc(5.5rem + var(--safe-area-top));
 }
 
 body {
   min-width: 20rem;
   min-height: 100vh;
   margin: 0;
+  padding: var(--safe-area-top) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) var(--safe-area-left);
   border-block-start: 0.25rem solid var(--accent);
   background: var(--page);
   color: var(--ink);
@@ -77,13 +81,13 @@ a:focus-visible {
 .skip-link {
   position: fixed;
   z-index: 10;
-  inset-block-start: 0.75rem;
-  inset-inline-start: 0.75rem;
+  inset-block-start: calc(0.75rem + var(--safe-area-top));
+  inset-inline-start: calc(0.75rem + var(--safe-area-left));
   padding: 0.7rem 0.95rem;
   background: var(--ink);
   color: var(--surface);
   font-weight: 700;
-  transform: translateY(-180%);
+  transform: translateY(calc(-180% - var(--safe-area-top)));
   transition: transform 150ms ease;
 }
 
@@ -99,7 +103,7 @@ a:focus-visible {
 .masthead {
   position: sticky;
   z-index: 5;
-  inset-block-start: 0;
+  inset-block-start: var(--safe-area-top);
   border-block-end: 1px solid var(--rule);
   background: var(--page);
 }
@@ -949,7 +953,7 @@ h2 {
   }
 
   .masthead {
-    inset-block-start: 0.7rem;
+    inset-block-start: calc(0.7rem + var(--safe-area-top));
     width: min(calc(100% - 2rem), var(--page-width));
     margin: 0.55rem auto 0;
     border: 1px solid rgb(255 255 255 / 92%);
@@ -1108,6 +1112,7 @@ h2 {
 
 @media print {
   body {
+    padding: 0;
     border-block-start: 0;
     background: #fff;
   }
