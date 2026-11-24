@@ -9,7 +9,6 @@ This file is the editable source for the text in `index.html`.
 
 ## Header and navigation
 
-- Skip link: `Skip to main content`
 - Site initials: `JCT`
 - Site name: `Javier Contreras`
 - Site link label: `Javier Contreras, go to profile`
