@@ -918,9 +918,15 @@ h2 {
 }
 
 @media screen and (forced-colors: none) {
+  html {
+    /* Blend with the bottom of the grid if browser chrome exposes the canvas. */
+    background: linear-gradient(90deg, var(--page) 26%, #e7ebea 60%, #d5dfe6);
+  }
+
   body {
     isolation: isolate;
     border-block-start-color: transparent;
+    background: transparent;
   }
 
   /* Pin the artwork to the viewport so the content can scroll over it. */
@@ -928,6 +934,7 @@ h2 {
     position: fixed;
     z-index: -1;
     inset: 0;
+    min-block-size: 100lvh;
     pointer-events: none;
     content: "";
     background:
