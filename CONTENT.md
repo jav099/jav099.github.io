@@ -39,7 +39,7 @@ This file is the editable source for the text in `index.html`.
 - Label: `Graduate study`
   - Value: `Master’s program in computer science, University of Washington.`
 - Label: `Background`
-  - Value: `Born in Mexico City in 1999`
+  - Value: `Born in Mexico City`
 
 ## Contact and profiles
 
