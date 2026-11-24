@@ -1024,7 +1024,8 @@ h2 {
     border-radius: 0.9rem;
     background:
       radial-gradient(ellipse at 10% 0%, rgb(255 255 255 / 70%), transparent 55%),
-      linear-gradient(147deg, rgb(255 255 255 / 40%), rgb(182 211 204 / 27%));
+      linear-gradient(147deg, rgb(255 255 255 / 40%), rgb(182 211 204 / 27%)),
+      rgb(200 222 216 / 44%);
     box-shadow:
       0 0 0 1px rgb(25 69 77 / 11%),
       inset 0 1px 0 rgb(255 255 255 / 90%),
@@ -1053,6 +1054,11 @@ h2 {
       background: linear-gradient(155deg, #ffffff78, #f3f3ef31 60%, #ffffff55);
       -webkit-backdrop-filter: blur(6px) saturate(135%);
       backdrop-filter: blur(6px) saturate(135%);
+    }
+
+    .profile__inner {
+      -webkit-backdrop-filter: blur(4px) saturate(115%);
+      backdrop-filter: blur(4px) saturate(115%);
     }
 
     .work-entry {
