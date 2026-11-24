@@ -1018,6 +1018,24 @@ h2 {
     color: var(--muted);
   }
 
+  .profile__inner {
+    padding: 1rem;
+    border: 1px solid rgb(255 255 255 / 89%);
+    border-radius: 0.9rem;
+    background:
+      radial-gradient(ellipse at 10% 0%, rgb(255 255 255 / 70%), transparent 55%),
+      linear-gradient(147deg, rgb(255 255 255 / 40%), rgb(182 211 204 / 27%));
+    box-shadow:
+      0 0 0 1px rgb(25 69 77 / 11%),
+      inset 0 1px 0 rgb(255 255 255 / 90%),
+      0 7px 22px rgb(25 69 77 / 8%);
+  }
+
+  .profile__inner .contact {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
   @media (min-width: 64rem) {
     body::before {
       --grid-line: #507c761c;
@@ -1027,24 +1045,6 @@ h2 {
 
     .profile {
       border-inline-end-color: transparent;
-    }
-
-    .profile__inner {
-      padding: 1rem;
-      border: 1px solid rgb(255 255 255 / 89%);
-      border-radius: 0.9rem;
-      background:
-        radial-gradient(ellipse at 10% 0%, rgb(255 255 255 / 70%), transparent 55%),
-        linear-gradient(147deg, rgb(255 255 255 / 40%), rgb(182 211 204 / 27%));
-      box-shadow:
-        0 0 0 1px rgb(25 69 77 / 11%),
-        inset 0 1px 0 rgb(255 255 255 / 90%),
-        0 7px 22px rgb(25 69 77 / 8%);
-    }
-
-    .profile__inner .contact {
-      margin-inline: 0;
-      padding-inline: 0;
     }
   }
 
