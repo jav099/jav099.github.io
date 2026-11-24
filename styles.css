@@ -905,8 +905,23 @@ h2 {
 
 @media screen and (forced-colors: none) {
   html {
-    /* Blend with the bottom of the grid if browser chrome exposes the canvas. */
-    background: linear-gradient(90deg, var(--page) 26%, #e7ebea 60%, #d5dfe6);
+    --grid-fade: var(--page) 26%, #f3f3efd9 39%, transparent 77%;
+    --grid-line: #507c7629;
+    --grid-teal: #a2c7bf;
+    --grid-mist: #dce9e4;
+    --grid-top: calc(0px - var(--safe-area-top));
+    --grid-height: calc(100lvh + var(--safe-area-top));
+    --grid-artwork:
+      linear-gradient(90deg, var(--grid-fade)),
+      repeating-linear-gradient(90deg, transparent 0 31px, var(--grid-line) 31px 32px),
+      repeating-linear-gradient(0deg, transparent 0 31px, var(--grid-line) 31px 32px),
+      radial-gradient(ellipse 92% 95% at 100% 18%, var(--grid-teal), var(--grid-mist) 61%, #d5dfe6);
+    /* Use the same artwork on the canvas where browser chrome clips the fixed layer. */
+    background-color: var(--page);
+    background-image: var(--grid-artwork);
+    background-position: 0 var(--grid-top);
+    background-size: 100% var(--grid-height);
+    background-attachment: fixed;
   }
 
   body {
@@ -917,21 +932,15 @@ h2 {
 
   /* Pin the artwork to the viewport so the content can scroll over it. */
   body::before {
-    --grid-fade: var(--page) 26%, #f3f3efd9 39%, transparent 77%;
-    --grid-line: #507c7629;
-    --grid-teal: #a2c7bf;
-    --grid-mist: #dce9e4;
     position: fixed;
     z-index: -1;
     inset: 0;
-    min-block-size: 100lvh;
+    inset-block-start: var(--grid-top);
+    min-block-size: var(--grid-height);
     pointer-events: none;
     content: "";
-    background:
-      linear-gradient(90deg, var(--grid-fade)),
-      repeating-linear-gradient(90deg, transparent 0 31px, var(--grid-line) 31px 32px),
-      repeating-linear-gradient(0deg, transparent 0 31px, var(--grid-line) 31px 32px),
-      radial-gradient(ellipse 92% 95% at 100% 18%, var(--grid-teal), var(--grid-mist) 61%, #d5dfe6);
+    background-image: var(--grid-artwork);
+    background-size: 100% var(--grid-height);
   }
 
   .masthead {
@@ -1016,7 +1025,7 @@ h2 {
   }
 
   @media (min-width: 64rem) {
-    body::before {
+    html {
       --grid-fade: var(--page) 5%, #f3f3ef80 24%, transparent 77%;
       --grid-line: #507c761c;
       --grid-teal: #c1d9d3;
