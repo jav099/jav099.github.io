@@ -27,7 +27,7 @@ This file is the editable source for the text in `index.html`.
 - Portrait alternative text: `Javier Contreras by the water`
 - Role: `Software Engineer II`
 - Name: `Javier Contreras`
-- Biography: `I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly contributing to Chromium. I have worked on accessibility, CSS, and layout. I have also helped write CSS specs and built tools for engineers. I built tools, skills, instructions, plugins for AI development in Edge/Chromium, and I am passionate about leveraging AI for engineering tasks.`
+- Biography: `I am a Software Engineer at Microsoft Edge, working on the Web Platform team and mainly contributing to Chromium. I work on accessibility, CSS, and layout. I have helped write CSS specs and built tools for engineers. I built tools, skills, instructions, plugins for AI development in Edge/Chromium, and I am passionate about leveraging AI for engineering tasks.`
 - Background list label: `Background`
 
 ### Profile facts
